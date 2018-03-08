@@ -10,22 +10,12 @@
   <body onload="resultWrite(); checkAll()">
     <div id="checkboxContent">
       <form>
-        <table>
-          <tr>
-            <td>
-              <input type="checkbox" id="selectAll" onchange="checkAll(); selectionCopy()">
-              <label class="checkbox" for="selectAll"></label>
-            </td>
-            <td>
-              <label id="lab" class="text" for="selectAll">Mindent</label>
-            </td>
-          </tr>
-          <tr>
-            <td>&nbsp</td>
-            <td>&nbsp</td>
-          </tr>
-          <?php include 'php/table.php' ?>
-        </table>
+        <div class="table">
+          <input type="checkbox" id="selectAll" onchange="checkAll(); selectionCopy()">
+          <label class="checkbox" for="selectAll"></label>
+          <label id="lab" class="text" for="selectAll"></label>
+        </div>
+        <?php include 'php/table.php' ?>
       </form>
     </div>
     <!-- <div id="resultContent">&nbsp

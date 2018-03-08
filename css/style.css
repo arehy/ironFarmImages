@@ -4,6 +4,7 @@
   --checkbox-height: 25px;
 }
 body {
+  font-size: 12px;
   background-image: url("../images/bg.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -15,20 +16,11 @@ p {
   padding-bottom: 5px;
 }
 #checkboxContent {
+  width: 60%;
   padding: 40px;
-  margin-top: 30px;
-  margin-left: 30%;
+  /* margin-top: 30px;
+  margin-left: 5%; */
   float: left;
-  -moz-border-radius-topleft: 0px;
-  -moz-border-radius-topright: 0px;
-  -moz-border-radius-bottomright: 0px;
-  -moz-border-radius-bottomleft: 0px;
-  -webkit-border-radius: 0px 0px 0px 0px;
-  border-radius: 0px 0px 0px 0px;
-
-  -webkit-box-shadow:0px 0px 5px 1px rgba(0,0,0,0.3);
-  -moz-box-shadow:0px 0px 5px 1px rgba(0,0,0,0.3);
-  box-shadow:0px 0px 5px 1px rgba(0,0,0,0.3);
 }
 #resultContent {
   margin-top: 30px;
@@ -56,32 +48,48 @@ td {
 input[type=checkbox] {
 display:none;
 }
-
-input[type=checkbox] + label.checkbox {
-background: url('../images/32px-locked_waypoint.png') no-repeat;
-background-position: center center;
-background-size: var(--bg-size);
-width: var(--checkbox-width);
-height: var(--checkbox-height);
-display: block;
-padding: 0 0 0 0px;
-}
-input[type=checkbox]:checked + label.checkbox {
-background: url('../images/32px-waypoint.png') no-repeat;
-/* background-attachment: fixed; */
-background-position: center center;
-background-size: var(--bg-size);
-width: var(--checkbox-width);
-height: var(--checkbox-height);
-display: block;
-padding: 0 0 0 0px;
-}
-input[type=checkbox]:checked + label.checkbox:hover {
-  background: url('../images/32px-hover_waypoint.png') no-repeat;
-  background-position: center center;
-  background-size: var(--bg-size);
-  width: var(--checkbox-width);
-  height: var(--checkbox-height);
+input[type=checkbox] + label.checkbox, input[type=checkbox]:checked + label.checkbox {
+  /* border:2px solid #2d2d2d; */
+  height:100px;
+  width:100px;
+  border-radius:50%;
+  -moz-border-radius:50%;
   display: block;
   padding: 0 0 0 0px;
+  border: 2px solid white;
+  -webkit-box-shadow:0px 0px 2px 1px rgba(0,0,0,0.6);
+  -moz-box-shadow:0px 0px 2px 1px rgba(0,0,0,0.6);
+  box-shadow:0px 0px 2px 1px rgba(0,0,0,0.6);
+}
+input[type=checkbox] + label.checkbox {
+  background:#dddddd;
+}
+input[type=checkbox] + label.checkbox#labBGMAAAA {
+  background-image: url("../images/waypoints/gallowfields.jpg");
+  background-position: center center;
+}
+input[type=checkbox] + label.checkbox#labBAYAAAA {
+  background-image: url("../images/waypoints/halacon.jpg");
+  background-position: center center;
+}
+input[type=checkbox]:checked + label.checkbox {
+  border: 2px solid #75acff;
+  background:#d50000;
+}
+input[type=checkbox]:checked + label.checkbox#labBGMAAAA {
+  background-image: url("../images/waypoints/gallowfields_active.jpg");
+  background-position: center center;
+}
+input[type=checkbox]:checked + label.checkbox#labBAYAAAA {
+  background-image: url("../images/waypoints/halacon_active.jpg");
+  background-position: center center;
+}
+input[type=checkbox]:checked + label.checkbox:hover {
+  background:#820000;
+}
+.table {
+  margin: 20px;
+  float: left;
+  text-align: center;
+  display: block;
 }

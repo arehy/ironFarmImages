@@ -11,20 +11,16 @@
     "BL8AAAA" => "Snowhawk Landing",
     "BGUCAAA" => "Wyrmblood",
     "BF4BAAA" => "Oldgate",
-    "BEsBAAA" => "Helliot",
+    "BEsBAAA" => "Helliot Mine",
     "BP0BAAA" => "Behem"
   );
   foreach ($items as $key => $value) {
     echo '
-    <tr>
-      <td>
+      <div class="table">
         <input type="checkbox" id="'.$key.'" name="[&'.$key.'=]" onchange="resultWrite(); selectionCopy()">
-        <label class="checkbox" for="'.$key.'"></label>
-      </td>
-      <td>
+        <label id="lab'.$key.'" class="checkbox" for="'.$key.'"></label>
         <label class="text" for="'.$key.'">'.$value.'</label>
-      </td>
-    </tr>';
+      </div>';
     //echo " $key => Érték: $value<br>";
   }
 ?>
