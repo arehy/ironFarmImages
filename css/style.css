@@ -1,0 +1,87 @@
+:root {
+  --bg-size: 20px 20px;
+  --checkbox-width: 25px;
+  --checkbox-height: 25px;
+}
+body {
+  background-image: url("../images/bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: contain;
+  background-position: right;
+}
+p {
+  margin: 0px;
+  padding-bottom: 5px;
+}
+#checkboxContent {
+  padding: 40px;
+  margin-top: 30px;
+  margin-left: 30%;
+  float: left;
+  -moz-border-radius-topleft: 0px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  border-radius: 0px 0px 0px 0px;
+
+  -webkit-box-shadow:0px 0px 5px 1px rgba(0,0,0,0.3);
+  -moz-box-shadow:0px 0px 5px 1px rgba(0,0,0,0.3);
+  box-shadow:0px 0px 5px 1px rgba(0,0,0,0.3);
+}
+#resultContent {
+  margin-top: 30px;
+  padding: 40px;
+  margin-left: 100px;
+  float: left;
+  -moz-border-radius-topleft: 0px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  border-radius: 0px 0px 0px 0px;
+
+  -webkit-box-shadow:0px 0px 5px 1px rgba(0,0,0,0.3);
+  -moz-box-shadow:0px 0px 5px 1px rgba(0,0,0,0.3);
+  box-shadow:0px 0px 5px 1px rgba(0,0,0,0.3);
+
+}
+td {
+    /* height: 20px; */
+    vertical-align: middle;
+    /* border: 1px solid #ddd; */
+    padding: 0 0 0 0px;
+}
+input[type=checkbox] {
+display:none;
+}
+
+input[type=checkbox] + label.checkbox {
+background: url('../images/32px-locked_waypoint.png') no-repeat;
+background-position: center center;
+background-size: var(--bg-size);
+width: var(--checkbox-width);
+height: var(--checkbox-height);
+display: block;
+padding: 0 0 0 0px;
+}
+input[type=checkbox]:checked + label.checkbox {
+background: url('../images/32px-waypoint.png') no-repeat;
+/* background-attachment: fixed; */
+background-position: center center;
+background-size: var(--bg-size);
+width: var(--checkbox-width);
+height: var(--checkbox-height);
+display: block;
+padding: 0 0 0 0px;
+}
+input[type=checkbox]:checked + label.checkbox:hover {
+  background: url('../images/32px-hover_waypoint.png') no-repeat;
+  background-position: center center;
+  background-size: var(--bg-size);
+  width: var(--checkbox-width);
+  height: var(--checkbox-height);
+  display: block;
+  padding: 0 0 0 0px;
+}
