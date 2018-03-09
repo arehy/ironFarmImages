@@ -1,3 +1,4 @@
+<?php include 'php/data.php' ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -5,9 +6,16 @@
     <title>Iron farm</title>
     <link rel="shortcut icon" href="favicon.png">
     <link href="css\style.css" rel="stylesheet">
+    <link href="php\tableStyle.php" rel="stylesheet">
     <script src="js\function.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(window).load(function() {
+      $(".loader").fadeOut("slow");})
+    </script>
   </head>
   <body onload="resultWrite(); checkAll()">
+    <div class="loader"></div>
     <div id="checkboxContent">
       <form>
         <div class="table">

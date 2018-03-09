@@ -11,9 +11,22 @@ body {
   background-size: contain;
   background-position: right;
 }
+body:after {
+ display:none;
+}
 p {
   margin: 0px;
   padding-bottom: 5px;
+}
+.loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url('../images/page-loader.gif') 50% 50% no-repeat rgb(249, 249, 249);
+  background-size: 150px;
 }
 #checkboxContent {
   width: 60%;
@@ -63,29 +76,19 @@ input[type=checkbox] + label.checkbox, input[type=checkbox]:checked + label.chec
 }
 input[type=checkbox] + label.checkbox {
   background:#dddddd;
-}
-input[type=checkbox] + label.checkbox#labBGMAAAA {
-  background-image: url("../images/waypoints/gallowfields.jpg");
-  background-position: center center;
-}
-input[type=checkbox] + label.checkbox#labBAYAAAA {
-  background-image: url("../images/waypoints/halacon.jpg");
+  background-image: url("../images/32px-locked_waypoint_fekete-feher.png");
+  background-repeat: no-repeat;
   background-position: center center;
 }
 input[type=checkbox]:checked + label.checkbox {
   border: 2px solid #75acff;
-  background:#d50000;
-}
-input[type=checkbox]:checked + label.checkbox#labBGMAAAA {
-  background-image: url("../images/waypoints/gallowfields_active.jpg");
-  background-position: center center;
-}
-input[type=checkbox]:checked + label.checkbox#labBAYAAAA {
-  background-image: url("../images/waypoints/halacon_active.jpg");
+  background:#ffdf8b;
+  background-image: url("../images/32px-waypoint.png");
+  background-repeat: no-repeat;
   background-position: center center;
 }
 input[type=checkbox]:checked + label.checkbox:hover {
-  background:#820000;
+  /* background:#820000; */
 }
 .table {
   margin: 20px;
