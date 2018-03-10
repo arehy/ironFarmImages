@@ -27,6 +27,6 @@ input[type=checkbox]:checked + label.checkbox#lab<?php echo $key; ?> {
 }
  ?>
 
- body:after {
+ body::after {
   content: <?php foreach ($items as $key => $value) { echo 'url("../images/waypoints_code/'.$key.'_active.jpg") '; } ?>;
  }

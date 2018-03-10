@@ -3,7 +3,16 @@
   --checkbox-width: 25px;
   --checkbox-height: 25px;
 }
+@font-face {
+  font-family: Alcubierre;
+  src: url('../fonts/Alcubierre.otf');
+}
+@font-face {
+  font-family: Fabrica;
+  src: url('../fonts/Fabrica.otf');
+}
 body {
+  font-family: Fabrica;
   font-size: 12px;
   background-image: url("../images/bg.jpg");
   background-repeat: no-repeat;
@@ -69,7 +78,7 @@ input[type=checkbox] + label.checkbox, input[type=checkbox]:checked + label.chec
   -moz-border-radius:50%;
   display: block;
   padding: 0 0 0 0px;
-  border: 2px solid white;
+  border: 3px solid white;
   -webkit-box-shadow:0px 0px 2px 1px rgba(0,0,0,0.6);
   -moz-box-shadow:0px 0px 2px 1px rgba(0,0,0,0.6);
   box-shadow:0px 0px 2px 1px rgba(0,0,0,0.6);
@@ -81,11 +90,14 @@ input[type=checkbox] + label.checkbox {
   background-position: center center;
 }
 input[type=checkbox]:checked + label.checkbox {
-  border: 2px solid #75acff;
+  border: 3px solid #df14bf;
   background:#ffdf8b;
   background-image: url("../images/32px-waypoint.png");
   background-repeat: no-repeat;
   background-position: center center;
+}
+input[type=checkbox]:checked + label.checkbox + label {
+  color: #df14bf;
 }
 input[type=checkbox]:checked + label.checkbox:hover {
   /* background:#820000; */
