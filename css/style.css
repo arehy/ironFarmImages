@@ -37,7 +37,7 @@ p {
   background: url('../images/page-loader.gif') 50% 50% no-repeat rgb(249, 249, 249);
   background-size: 150px;
 }
-#checkboxContent {
+#checkboxContent, #charactersContent {
   width: 60%;
   padding: 40px;
   /* margin-top: 30px;
@@ -96,8 +96,14 @@ input[type=checkbox]:checked + label.checkbox {
   background-repeat: no-repeat;
   background-position: center center;
 }
-input[type=checkbox]:checked + label.checkbox + label {
+#checkboxContent input[type=checkbox]:checked + label.checkbox + label {
   color: #df14bf;
+}
+#charactersContent input[type=checkbox]:checked + label.checkbox + label {
+  color: inherit;
+}
+#charactersContent input[type=checkbox] + label.checkbox + label {
+  color: #008f60;
 }
 input[type=checkbox]:checked + label.checkbox:hover {
   /* background:#820000; */

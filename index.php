@@ -30,5 +30,11 @@
     </div> -->
     <textarea style="visibility: hidden;" id="resultContent">
     </textarea>
+
+    <div id="charactersContent">
+      <form>
+        <?php include 'php/characters.php' ?>
+      </form>
+    </div>
   </body>
 </html>

@@ -1,7 +1,8 @@
 <?php
+header("Content-type: text/css; charset: UTF-8");
 include 'data.php';
 foreach ($items as $key => $value) {
-header("Content-type: text/css; charset: UTF-8");
+
 
 //   echo '
 //   input[type=checkbox] + label.checkbox {
@@ -16,17 +17,36 @@ header("Content-type: text/css; charset: UTF-8");
 
  ?>
 input[type=checkbox] + label.checkbox#lab<?php echo $key; ?> {
-  background-image: url("../images/waypoints_code/<?php echo $key; ?>.jpg");
-  background-position: center center;
+  background-image: url("../images/waypoints_code/<?php echo $key; ?>_active.jpg");
+  filter: grayscale(1) sepia(50%);
+	transition-property: filter;
+	transition-duration: 1s;
 }
 input[type=checkbox]:checked + label.checkbox#lab<?php echo $key; ?> {
-  background-image: url("../images/waypoints_code/<?php echo $key; ?>_active.jpg");
-  background-position: center center;
+
+  filter: brightness(1.20);
+	transition-property: filter;
+	transition-duration: 1s;
 }
 <?php
 }
- ?>
 
- body::after {
-  content: <?php foreach ($items as $key => $value) { echo 'url("../images/waypoints_code/'.$key.'_active.jpg") '; } ?>;
- }
+
+foreach ($characters as $key => $value) {
+  ?>
+  input[type=checkbox] + label.checkbox#lab<?php echo $key; ?> {
+    background-image: url("../images/characters/<?php echo $key; ?>.jpg");
+    background-size: 100px;
+    border: 3px solid #008f60;
+    filter: brightness(1.20);
+    transition-property: filter;
+    transition-duration: 1s;
+  }
+  input[type=checkbox]:checked + label.checkbox#lab<?php echo $key; ?> {
+    border: 3px solid white;
+    filter: grayscale(1) sepia(50%);
+    transition-property: filter;
+    transition-duration: 1s;
+  }
+  <?php
+}
