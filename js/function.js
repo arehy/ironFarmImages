@@ -51,7 +51,7 @@ function checkAll() {
   resultWrite();
 }
 
-function counter(countDownDate) {
+function counter(countDownDate, counterId) {
 	// Set the date we're counting down to
 	//var countDownDate = new Date().getTime()+3600000*24;
 
@@ -71,13 +71,13 @@ function counter(countDownDate) {
 		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
 		// Output the result in an element with id="demo"
-		document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+		document.getElementById(counterId).innerHTML = days + "d " + hours + "h "
 		+ minutes + "m " + seconds + "s ";
 
 		// If the count down is over, write some text
 		if (distance < 0) {
 			clearInterval(x);
-			document.getElementById("demo").innerHTML = countDownDate;
+			document.getElementById(counterId).innerHTML = countDownDate;
 		}
 	}, 1000);
 }
@@ -100,11 +100,25 @@ function createCookie(name, value, hours) { //hours a lejárat
 function splitCookie(name) { //ez adja a számot, amit a counter() függvénynek kell átadni (countDownDate változó)
 	if(document.cookie.length != 0) {
 		var nameValueArray = document.cookie.split(name+'=');
-    var nameValueArray2 = nameValueArray[1].split(';');
-    var countDownDate = nameValueArray2[0];
-    document.getElementById("counter"+name).innerHTML = nameValueArray2[0];
+		if (typeof nameValueArray[1] != 'undefined') {
+			var nameValueArray2 = nameValueArray[1].split(';');
+			if (typeof nameValueArray2[0] != 'undefined') {
+				return nameValueArray2[0];
+			}
+		}
 	}
-	else {
-		document.getElementById("counter"+name).innerHTML = 'üres';
+		//document.getElementById("counter"+name).innerHTML = 'üres';
+		return 0;
+}
+
+function counterWrite() {
+	var elem = document.forms[1];
+	for (i = 0; i < elem.elements.length; i++) {
+		var counterId = 'counter'+elem.elements[i]['id'];
+		var name = elem.elements[i]['id'];
+		//var splitCookie = splitCookie(counterId);
+		//document.getElementById(counterId).innerHTML = splitCookie(name);
+		//document.getElementById('allCookie').innerHTML = document.cookie;
+		counter(splitCookie(name), counterId);
 	}
 }

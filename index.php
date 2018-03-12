@@ -14,7 +14,7 @@
       $(".loader").fadeOut("slow");})
     </script>
   </head>
-  <body onload="resultWrite(); checkAll()">
+  <body onload="resultWrite(); checkAll(); counterWrite()">
     <div class="loader"></div>
     <div id="checkboxContent">
       <form>
@@ -36,5 +36,6 @@
         <?php include 'php/characters.php' ?>
       </form>
     </div>
+    <div id="allCookie"></div>
   </body>
 </html>

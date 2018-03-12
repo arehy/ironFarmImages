@@ -2,13 +2,12 @@
   foreach ($characters as $key => $value) {
     echo '
       <div class="table">
-      <script type="text/javascript">
-         splitCookie("counter'.$key.'");
-      </script>
-      <div id="counter'.$key.'">
-        ide jön a counter
-      </div>
-        <input type="checkbox" id="'.$key.'" name="[&'.$key.'=]" onchange="charactersResultWrite()">
+        <div id="counter'.$key.'">
+          <script type="text/javascript">
+
+          </script>
+        </div>
+        <input type="checkbox" id="'.$key.'" name="[&'.$key.'=]" onchange="charactersResultWrite(); createCookie(\''.$key.'\', new Date().getTime()+3600000*24, 1); counterWrite()">
         <label id="lab'.$key.'" class="checkbox" for="'.$key.'"></label>
         <label class="text" for="'.$key.'">'.$value.'</label>
       </div>';
