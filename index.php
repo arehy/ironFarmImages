@@ -37,5 +37,8 @@
       </form>
     </div>
     <div id="allCookie"></div>
+    <script>
+      document.getElementById('allCookie').innerHTML = document.cookie;
+    </script>
   </body>
 </html>

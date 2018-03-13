@@ -51,7 +51,7 @@ function checkAll() {
   resultWrite();
 }
 
-function counter(countDownDate, counterId) {
+function counter(countDownDate, counterId, name) {
 	// Set the date we're counting down to
 	//var countDownDate = new Date().getTime()+3600000*24;
 
@@ -77,7 +77,8 @@ function counter(countDownDate, counterId) {
 		// If the count down is over, write some text
 		if (distance < 0) {
 			clearInterval(x);
-			document.getElementById(counterId).innerHTML = countDownDate;
+			document.getElementById(name).checked = false;
+			document.getElementById(counterId).innerHTML = "Mehetünk :)";
 		}
 	}, 1000);
 }
@@ -119,6 +120,6 @@ function counterWrite() {
 		//var splitCookie = splitCookie(counterId);
 		//document.getElementById(counterId).innerHTML = splitCookie(name);
 		//document.getElementById('allCookie').innerHTML = document.cookie;
-		counter(splitCookie(name), counterId);
+		counter(splitCookie(name), counterId, name);
 	}
 }
