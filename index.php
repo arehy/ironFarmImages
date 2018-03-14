@@ -32,13 +32,10 @@
     </textarea>
 
     <div id="charactersContent">
+      <input type="button" name="" value="reset" onclick="clearAllCookie()">
       <form>
         <?php include 'php/characters.php' ?>
       </form>
     </div>
-    <div id="allCookie"></div>
-    <script>
-      document.getElementById('allCookie').innerHTML = document.cookie;
-    </script>
   </body>
 </html>

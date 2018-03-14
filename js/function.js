@@ -12,7 +12,7 @@ function resultWrite() {
   var n = 1;
     for (i = 1; i < elem.elements.length; i++) {
       if (elem.elements[i].checked){
-        document.getElementById('resultContent').innerHTML += n + '.' + elem.elements[i]['name'] + ' ';
+        document.getElementById('resultContent').innerHTML += n + '.' + elem.elements[i].name + ' ';
         n++;
       }
     }
@@ -24,40 +24,40 @@ function charactersResultWrite() {
   var n = 1;
     for (i = 1; i < elem.elements.length; i++) {
       if (elem.elements[i].checked){
-        document.getElementById('resultContent').innerHTML += n + '.' + elem.elements[i]['name'] + ' ';
+        document.getElementById('resultContent').innerHTML += n + '.' + elem.elements[i].name + ' ';
         n++;
       }
     }
 }
 
 function checkAll() {
-  if(document.getElementById('selectAll').checked) {
-    document.getElementById('lab').innerHTML = 'Semmit';
-  }
-  else{
-    //aaaaaa = '<p>Nincs kiválasztva semmi</p>';
-    //document.getElementById('resultContent').innerHTML = '<p>Nincs kiválasztva semmi</p>';
-    document.getElementById('lab').innerHTML = 'Mindet';
-  }
+	if(document.getElementById('selectAll').checked) {
+		document.getElementById('lab').innerHTML = 'Semmit';
+	}
+	else{
+		document.getElementById('lab').innerHTML = 'Mindet';
+	}
 
-  elem = document.forms[0];
-  merre = elem.elements[0].checked;
+	elem = document.forms[0];
+	merre = elem.elements[0].checked;
 
-  for(i=0;i<elem.elements.length;i++) {
-    if (elem.elements[i].type=="checkbox"){
-      elem.elements[i].checked=merre // Ha ki nem kell, akkor merre helyett true
-    }
-  }
-  resultWrite();
+	for(i=0;i<elem.elements.length;i++) {
+		if (elem.elements[i].type=="checkbox"){
+			elem.elements[i].checked=merre // Ha a ki nem kell, akkor merre helyett true
+		}
+	}
+	resultWrite();
 }
 
-function counter(countDownDate, counterId, name) {
+function counter(name) {
+
+	var counterId = 'counter'+name;
 	// Set the date we're counting down to
-	//var countDownDate = new Date().getTime()+3600000*24;
 
 	// Update the count down every 1 second
-	var x = setInterval(function() {
 
+	var x = setInterval(function() {
+		var countDownDate = splitCookie(name);
 		// Get todays date and time
 		var now = new Date().getTime();
 
@@ -71,8 +71,8 @@ function counter(countDownDate, counterId, name) {
 		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
 		// Output the result in an element with id="demo"
-		document.getElementById(counterId).innerHTML = days + "d " + hours + "h "
-		+ minutes + "m " + seconds + "s ";
+		document.getElementById(name).checked = true;
+		document.getElementById(counterId).innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
 
 		// If the count down is over, write some text
 		if (distance < 0) {
@@ -108,18 +108,51 @@ function splitCookie(name) { //ez adja a számot, amit a counter() függvénynek
 			}
 		}
 	}
-		//document.getElementById("counter"+name).innerHTML = 'üres';
 		return 0;
 }
 
 function counterWrite() {
 	var elem = document.forms[1];
 	for (i = 0; i < elem.elements.length; i++) {
-		var counterId = 'counter'+elem.elements[i]['id'];
-		var name = elem.elements[i]['id'];
-		//var splitCookie = splitCookie(counterId);
-		//document.getElementById(counterId).innerHTML = splitCookie(name);
-		//document.getElementById('allCookie').innerHTML = document.cookie;
-		counter(splitCookie(name), counterId, name);
+		var name = elem.elements[i].id;
+		counter(name);
+	}
+}
+
+function onChangeCounter(id){
+	if (document.getElementById(id).checked) {
+		charactersResultWrite();
+		createCookie(id, new Date().getTime()+24*60*60*1000, 24);
+		counterWrite();
+	}
+	else {
+		counterAlert(id);
+	}
+}
+function counterAlert(id){
+	var person = prompt("Add meg percben az új értéket, 0 a reset", 0);
+
+	if (person == null || person == "") {
+		txt = "User cancelled the prompt.";
+	} else {
+		//person = numberCheck(person);
+		//Pattern.compile("[0-9]").matches(person);
+		person = numberCheck(person);
+		createCookie(id, new Date().getTime()+person*60*1000, person);
+	}
+}
+function numberCheck(foo) {
+	if (foo.match(/^[\d\/-]+$/)) {
+		return foo;
+	}
+	else {
+		return 0;
+	}
+}
+function clearAllCookie() {
+	var elem = document.forms[1];
+	for (i = 0; i < elem.elements.length; i++) {
+		var id = elem.elements[i].id;
+		createCookie(id, new Date().getTime()+0, 0);
 	}
 }
