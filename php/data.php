@@ -26,4 +26,15 @@ $characters = array(
   "lea" => "Lea Kroe <br> (Warrior)",
   "lana" => "Lana Kroe <br> (Mesmer)"
 );
+$characters2 = array(
+  "lisa" => "Miss Mimy <br> (Guardian)",
+  "zya" => "Trixy Mist <br> (Thief)",
+  "lara" => "Misty Trixx <br> (Engi)",
+  "jessy" => "Kyra Cale <br> (Mesmer)",
+  "jeizy" => "Lora Bloom <br> (Warrior)",
+  "lily" => "Bitsie Bloom <br> (Elementalis)",
+  "zoe" => "Maidy Moon <br> (Necro)",
+  "lea" => "Blumy Brave <br> (Ranger)",
+  "lana" => "Reina Redmoon <br> (Revenant)"
+);
  ?>
