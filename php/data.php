@@ -32,9 +32,10 @@ $characters2 = array(
   "lara" => "Misty Trixx <br> (Engi)",
   "jessy" => "Kyra Cale <br> (Mesmer)",
   "jeizy" => "Lora Bloom <br> (Warrior)",
-  "lily" => "Bitsie Bloom <br> (Elementalis)",
+  "lily" => "Bitsie Bloom <br> (Elementalist)",
   "zoe" => "Maidy Moon <br> (Necro)",
   "lea" => "Blumy Brave <br> (Ranger)",
-  "lana" => "Reina Redmoon <br> (Revenant)"
+  "lana" => "Reina Redmoon <br> (Revenant)",
+  "lizy" => "Lizy Mist <br> (Druid)"
 );
  ?>
