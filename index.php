@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="favicon.png">
     <link href="css\style.css" rel="stylesheet">
     <link href="php\tableStyle.php" rel="stylesheet">
-    <link href="css\arehy.css" rel="stylesheet">
+    <link href="css\xantie.css" rel="stylesheet">
     <script src="js\function.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script type="text/javascript">

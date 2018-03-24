@@ -12,7 +12,7 @@ function resultWrite() {
   var n = 1;
     for (i = 1; i < elem.elements.length; i++) {
       if (elem.elements[i].checked){
-        document.getElementById('resultContent').innerHTML += n + '.' + elem.elements[i].name + ' ';
+        document.getElementById('resultContent').innerHTML += n + elem.elements[i].name + ' ';
         n++;
       }
     }
